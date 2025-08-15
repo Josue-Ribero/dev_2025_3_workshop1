@@ -1,89 +1,38 @@
 class Conversion:
+    # Conversiones de temperatura
     def celsius_a_fahrenheit(self, celsius):
-        """
-        Convierte temperatura de Celsius a Fahrenheit.
-        
-        Args:
-            celsius (float): Temperatura en grados Celsius
-            
-        Returns:
-            float: Temperatura en grados Fahrenheit
-            
-        Fórmula: F = (C × 9/5) + 32
-        
-        Ejemplo:
-            celsius_a_fahrenheit(0) -> 32.0
-            celsius_a_fahrenheit(100) -> 212.0
-        """
-        pass
+
+        farenheit = (celsius * 9/5) + 32
+        return farenheit
     
     def fahrenheit_a_celsius(self, fahrenheit):
-        """
-        Convierte temperatura de Fahrenheit a Celsius.
-        
-        Args:
-            fahrenheit (float): Temperatura en grados Fahrenheit
-            
-        Returns:
-            float: Temperatura en grados Celsius
-            
-        Fórmula: C = (F - 32) × 5/9
-        
-        Ejemplo:
-            fahrenheit_a_celsius(32) -> 0.0
-            fahrenheit_a_celsius(212) -> 100.0
-        """
-        pass
+
+        celsius = (fahrenheit - 32) * 5/9
+        return celsius
     
+    #Conversiones de distancia
     def metros_a_pies(self, metros):
-        """
-        Convierte distancia de metros a pies.
-        
-        Args:
-            metros (float): Distancia en metros
-            
-        Returns:
-            float: Distancia en pies
-            
-        Factor: 1 metro = 3.28084 pies
-        
-        Ejemplo:
-            metros_a_pies(1) -> 3.28084
-        """
-        pass
+
+        pies = (metros * 3.28084)
+        return pies
     
     def pies_a_metros(self, pies):
-        """
-        Convierte distancia de pies a metros.
-        
-        Args:
-            pies (float): Distancia en pies
-            
-        Returns:
-            float: Distancia en metros
-            
-        Factor: 1 pie = 0.3048 metros
-        
-        Ejemplo:
-            pies_a_metros(3.28084) -> 1.0
-        """
-        pass
+
+        metros = (pies / 3.28084)
+        return metros
     
+    #Conversiones de sistemas numericos
     def decimal_a_binario(self, decimal):
-        """
-        Convierte un número decimal a su representación binaria.
+        decimal = abs(decimal)
+        if decimal == 0:
+            return "0"
         
-        Args:
-            decimal (int): Número decimal (positivo)
-            
-        Returns:
-            str: Representación binaria como string
-            
-        Ejemplo:
-            decimal_a_binario(10) -> "1010"
-            decimal_a_binario(255) -> "11111111"
-        """
-        pass
+        binario = ""
+        while decimal > 0:
+            residuo = decimal % 2
+            binario += str(residuo)
+            decimal //= 2
+        return binario
     
     def binario_a_decimal(self, binario):
         """
@@ -101,6 +50,7 @@ class Conversion:
         """
         pass
     
+    # Conversiones de numero a alfabeto
     def decimal_a_romano(self, numero):
         """
         Convierte un número decimal a numeración romana.
@@ -133,7 +83,34 @@ class Conversion:
         """
         pass
     
-    def texto_a_morse(self, texto):
+    # Conversiones de texto a morse
+    def texto_a_morse(self, texto: str):
+        texto
+        morse = {
+            # Letras
+            'A': '.-',     'B': '-...',   'C': '-.-.',   'D': '-..',
+            'E': '.',      'F': '..-.',   'G': '--.',    'H': '....',
+            'I': '..',     'J': '.---',   'K': '-.-',    'L': '.-..',
+            'M': '--',     'N': '-.',     'O': '---',    'P': '.--.',
+            'Q': '--.-',   'R': '.-.',    'S': '...',    'T': '-',
+            'U': '..-',    'V': '...-',   'W': '.--',    'X': '-..-',
+            'Y': '-.--',   'Z': '--..',
+
+            # Números y espacio
+            '0': '-----',  '1': '.----',  '2': '..---',  '3': '...--',
+            '4': '....-',  '5': '.....',  '6': '-....',  '7': '--...',
+            '8': '---..',  '9': '----.', ' ': '/'
+        }
+
+        textoSeparado = []
+        textoEnMorse = []
+        textoSeparado.append(texto.split(''))
+        for item in textoSeparado:
+            if item in morse.keys():
+                textoEnMorse.append(morse.values())
+                str(textoEnMorse)
+        return textoEnMorse
+
         """
         Convierte texto a código Morse.
         

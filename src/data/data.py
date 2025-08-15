@@ -5,32 +5,23 @@ class Data:
     """
     
     def invertir_lista(self, lista):
-        """
-        Invierte el orden de los elementos en una lista sin usar reversed() o lista[::-1].
-        
-        Args:
-            lista (list): Lista a invertir
-            
-        Returns:
-            list: Lista con los elementos en orden inverso
-        """
-        pass
+        invertida = []
+        for item in lista:
+            invertida.insert(0, item)
+        return invertida
     
-    def buscar_elemento(self, lista, elemento):
-        """
-        Busca un elemento en una lista y devuelve su índice (o -1 si no existe).
-        Implementación manual sin usar index().
-        
-        Args:
-            lista (list): Lista donde buscar
-            elemento: Elemento a buscar
-            
-        Returns:
-            int: Índice del elemento o -1 si no se encuentra
-        """
-        pass
+    def buscar_elemento(self, lista: list, elemento):
+        if elemento in lista:
+            return lista.index(elemento)
+        else:
+            return -1
     
-    def eliminar_duplicados(self, lista):
+    def eliminar_duplicados(self, lista: list):
+        listaSinDobles = []
+        for elemento in lista:
+            if elemento not in listaSinDobles:
+                listaSinDobles.append(elemento)
+        return listaSinDobles
         """
         Elimina elementos duplicados de una lista sin usar set().
         Mantiene el orden original de aparición.
