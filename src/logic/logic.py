@@ -4,119 +4,36 @@ class Logica:
     """
     
     def AND(self, a, b):
-        """
-        Implementa la operación lógica AND.
-        
-        Args:
-            a (bool): Primer valor booleano
-            b (bool): Segundo valor booleano
-            
-        Returns:
-            bool: Resultado de a AND b
-        """
-        pass
+        return a and b
+    
     
     def OR(self, a, b):
-        """
-        Implementa la operación lógica OR.
-        
-        Args:
-            a (bool): Primer valor booleano
-            b (bool): Segundo valor booleano
-            
-        Returns:
-            bool: Resultado de a OR b
-        """
-        pass
+        return a or b
+    
     
     def NOT(self, a):
-        """
-        Implementa la operación lógica NOT.
+        return not a
         
-        Args:
-            a (bool): Valor booleano
-            
-        Returns:
-            bool: Resultado de NOT a
-        """
-        pass
     
     def XOR(self, a, b):
-        """
-        Implementa la operación lógica XOR (OR exclusivo).
+        return a != b
         
-        Args:
-            a (bool): Primer valor booleano
-            b (bool): Segundo valor booleano
-            
-        Returns:
-            bool: Resultado de a XOR b
-        """
-        pass
     
     def NAND(self, a, b):
-        """
-        Implementa la operación lógica NAND (NOT AND).
+        return not (a and b)
         
-        Args:
-            a (bool): Primer valor booleano
-            b (bool): Segundo valor booleano
-            
-        Returns:
-            bool: Resultado de a NAND b
-        """
-        pass
     
     def NOR(self, a, b):
-        """
-        Implementa la operación lógica NOR (NOT OR).
+        return not(a or b)
         
-        Args:
-            a (bool): Primer valor booleano
-            b (bool): Segundo valor booleano
-            
-        Returns:
-            bool: Resultado de a NOR b
-        """
-        pass
     
     def XNOR(self, a, b):
-        """
-        Implementa la operación lógica XNOR (NOT XOR).
+        return a == b
         
-        Args:
-            a (bool): Primer valor booleano
-            b (bool): Segundo valor booleano
-            
-        Returns:
-            bool: Resultado de a XNOR b
-        """
-        pass
     
     def implicacion(self, a, b):
-        """
-        Implementa la operación lógica de implicación (a -> b).
+        return (not a) or b
         
-        Args:
-            a (bool): Primer valor booleano (antecedente)
-            b (bool): Segundo valor booleano (consecuente)
-            
-        Returns:
-            bool: Resultado de la implicación
-        """
-        pass
     
     def bi_implicacion(self, a, b):
-        """
-        Implementa la operación lógica de bi-implicación (a <-> b).
-        
-        Args:
-            a (bool): Primer valor booleano
-            b (bool): Segundo valor booleano
-            
-        Returns:
-            bool: Resultado de la bi-implicación
-        """
-        pass
-    
-    
+        return a == b
