@@ -1,95 +1,80 @@
 class Stats:
     def promedio(self, numeros):
-        """
-        Calcula la media aritmética de una lista de números.
+        # Verifica si la lista no está vacía
+        if numeros:
+            return sum(numeros) / len(numeros)
+        return 0
         
-        Args:
-            numeros (list): Lista de números
-            
-        Returns:
-            float: La media aritmética de los números
-            
-        Ejemplo:
-            promedio([1, 2, 3, 4, 5]) -> 3.0
-        """
-        pass
     
     def mediana(self, numeros):
-        """
-        Encuentra el valor mediano de una lista de números.
-        Para listas con número par de elementos, retorna el promedio de los dos valores centrales.
+        # Verifica si la lista no está vacía
+        if numeros:
+            numeros.sort() # Ordena la lista de forma ascendente
+            longitud = len(numeros)
+            mid = longitud // 2 # Encuentra el valor exacto del medio
+
+            # Si la longitud es par, retorna el promedio de los dos valores centrales
+            if longitud % 2 == 0:
+                return (numeros[mid - 1] + numeros[mid]) / 2
+            else:
+                # Si es impar, retorna el valor central
+                return numeros[mid]
+        return 0
         
-        Args:
-            numeros (list): Lista de números
-            
-        Returns:
-            float: El valor mediano
-            
-        Ejemplo:
-            mediana([1, 2, 3, 4, 5]) -> 3.0
-            mediana([1, 2, 3, 4]) -> 2.5
-        """
-        pass
     
     def moda(self, numeros):
-        """
-        Encuentra el valor que aparece con mayor frecuencia en la lista.
-        Si hay empate, retorna el primer valor encontrado.
+        # Verifica si la lista no está vacía
+        if numeros:
+            cantidad = {} # Diccionario para contar cantidad de veces
+            for num in numeros:
+                if num in cantidad:
+                    cantidad[num] += 1 # Incrementa el contador de apariciones
+                else:
+                    cantidad[num] = 1 # Inicializa contador
+
+            # Encuentra el número con la máxima frecuencia
+            maximaFrecuencia = max(cantidad.values())
+            for num in numeros:
+                if cantidad[num] == maximaFrecuencia:
+                    return num
+        return None
         
-        Args:
-            numeros (list): Lista de números
-            
-        Returns:
-            number: El valor más frecuente
-            
-        Ejemplo:
-            moda([1, 2, 2, 3, 3, 3]) -> 3
-        """
-        pass
     
     def desviacion_estandar(self, numeros):
-        """
-        Calcula la desviación estándar de una lista de números.
-        Usa la fórmula de desviación estándar poblacional.
+        desviacion = 0 # Inicializa la desviación estándar
+
+        # Verifica si la lista no está vacía
+        if numeros:
+            promedio = self.promedio(numeros) # Calcula el promedio
+            for x in numeros:
+                # Calcula la suma de las diferencias al cuadrado
+                desviacion += (x - promedio) ** 2
+
+            # Divide por el número de elementos y saca la raíz cuadrada
+            desviacion = (desviacion / len(numeros)) ** 0.5
+        return desviacion
         
-        Args:
-            numeros (list): Lista de números
-            
-        Returns:
-            float: La desviación estándar
-            
-        Ejemplo:
-            desviacion_estandar([1, 2, 3, 4, 5]) -> 1.41...
-        """
-        pass
     
     def varianza(self, numeros):
-        """
-        Calcula la varianza de una lista de números.
-        La varianza es el cuadrado de la desviación estándar.
+        varianza = 0 # Inicializa la varianza
         
-        Args:
-            numeros (list): Lista de números
-            
-        Returns:
-            float: La varianza
-            
-        Ejemplo:
-            varianza([1, 2, 3, 4, 5]) -> 2.0
-        """
-        pass
+        # Verifica si la lista no está vacía
+        if numeros:
+            promedio = self.promedio(numeros)
+            for x in numeros:
+                # Calcula la suma de las diferencias al cuadrado
+                varianza += (x - promedio) ** 2
+
+            # Divide por el número de elementos
+            varianza /= len(numeros)
+        return varianza
+    
     
     def rango(self, numeros):
-        """
-        Calcula el rango (diferencia entre el valor máximo y mínimo).
-        
-        Args:
-            numeros (list): Lista de números
-            
-        Returns:
-            number: La diferencia entre max y min
-            
-        Ejemplo:
-            rango([1, 5, 3, 9, 2]) -> 8
-        """
-        pass
+        rango = 0 # Inicializa el rango
+
+        # Verifica si la lista no está vacía
+        if numeros:
+            # Calcula el rango como la diferencia entre el máximo y mínimo
+            rango = max(numeros) - min(numeros)
+        return rango
