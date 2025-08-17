@@ -4,333 +4,189 @@ class Geometria:
     Include basic and funny operations in 2D and 3D.
     """
     
-    def area_rectangulo(self, base, altura):
-        """
-        Calcula el área de un rectángulo.
-        
-        Args:
-            base (float): Longitud de la base del rectángulo
-            altura (float): Altura del rectángulo
-            
-        Returns:
-            float: Área del rectángulo
-        """
-        return base*altura
+    def area_rectangulo(self, base: float, altura: float):
+        areaRectangulo = float(base * altura)
+
+        if areaRectangulo  == int(areaRectangulo):
+            return int(areaRectangulo)
+        return round(areaRectangulo, 1)
     
+
     def perimetro_rectangulo(self, base, altura):
-        """
-        Calcula el perímetro de un rectángulo.
-        
-        Args:
-            base (float): Longitud de la base del rectángulo
-            altura (float): Altura del rectángulo
-            
-        Returns:
-            float: Perímetro del rectángulo
-        """
-        pass
+        perimetroRectangulo = 2 * (base + altura)
+
+        if perimetroRectangulo == int(perimetroRectangulo):
+            return int(perimetroRectangulo)
+        return perimetroRectangulo
+    
     
     def area_circulo(self, radio):
-        """
-        Calcula el área de un círculo.
-        
-        Args:
-            radio (float): Radio del círculo
-            
-        Returns:
-            float: Área del círculo
-        """
-        pass
+        areaCirculo = 3.141592 * (radio ** 2)
+        return round(areaCirculo, 2)
+    
     
     def perimetro_circulo(self, radio):
-        """
-        Calcula el perímetro (circunferencia) de un círculo.
-        
-        Args:
-            radio (float): Radio del círculo
-            
-        Returns:
-            float: Perímetro del círculo
-        """
-        pass
+        perimetroCirculo = 2 * 3.141592 * radio
+        return round(perimetroCirculo, 2)
+    
     
     def area_triangulo(self, base, altura):
-        """
-        Calcula el área de un triángulo.
-        
-        Args:
-            base (float): Longitud de la base del triángulo
-            altura (float): Altura del triángulo
-            
-        Returns:
-            float: Área del triángulo
-        """
-        pass
+        areaTriangulo = (base * altura) / 2
+
+        if areaTriangulo.is_integer():
+            return int(areaTriangulo)
+        return areaTriangulo
+    
     
     def perimetro_triangulo(self, lado1, lado2, lado3):
-        """
-        Calcula el perímetro de un triángulo.
+        perimetroTriangulo = lado1 + lado2 + lado3
+
+        if perimetroTriangulo.is_integer():
+            return int(perimetroTriangulo)
+        return perimetroTriangulo
         
-        Args:
-            lado1 (float): Longitud del primer lado
-            lado2 (float): Longitud del segundo lado
-            lado3 (float): Longitud del tercer lado
-            
-        Returns:
-            float: Perímetro del triángulo
-        """
-        pass
     
     def es_triangulo_valido(self, lado1, lado2, lado3):
-        """
-        Verifica si tres longitudes pueden formar un triángulo válido.
-        Un triángulo es válido si la suma de las longitudes de dos lados
-        es mayor que la longitud del tercer lado, para todos los lados.
+        if (lado1 + lado2 > lado3) and (lado1 + lado3 > lado2) and (lado2 + lado3 > lado1):
+            return True
+        else:
+            return False
         
-        Args:
-            lado1 (float): Longitud del primer lado
-            lado2 (float): Longitud del segundo lado
-            lado3 (float): Longitud del tercer lado
-            
-        Returns:
-            bool: True si los lados pueden formar un triángulo, False en caso contrario
-        """
-        pass
     
     def area_trapecio(self, base_mayor, base_menor, altura):
-        """
-        Calcula el área de un trapecio.
-        
-        Args:
-            base_mayor (float): Longitud de la base mayor
-            base_menor (float): Longitud de la base menor
-            altura (float): Altura del trapecio
-            
-        Returns:
-            float: Área del trapecio
-        """
-        pass
+        areaTrapecio = ((base_mayor + base_menor) * altura) / 2
+
+        if areaTrapecio == int(areaTrapecio):
+            return int(areaTrapecio)
+        return areaTrapecio
+    
     
     def area_rombo(self, diagonal_mayor, diagonal_menor):
-        """
-        Calcula el área de un rombo usando sus diagonales.
-        
-        Args:
-            diagonal_mayor (float): Longitud de la diagonal mayor
-            diagonal_menor (float): Longitud de la diagonal menor
-            
-        Returns:
-            float: Área del rombo
-        """
-        pass
+        areaRombo = (diagonal_mayor * diagonal_menor) / 2
+
+        if areaRombo == int(areaRombo):
+            return int(areaRombo)
+        return areaRombo
+    
     
     def area_pentagono_regular(self, lado, apotema):
-        """
-        Calcula el área de un pentágono regular.
+        areaPentagono = (5 * lado * apotema) / 2
+
+        if areaPentagono == int(areaPentagono):
+            return int(areaPentagono)
+        return areaPentagono
         
-        Args:
-            lado (float): Longitud del lado del pentágono
-            apotema (float): Longitud de la apotema (distancia del centro al punto medio de un lado)
-            
-        Returns:
-            float: Área del pentágono regular
-        """
-        pass
     
     def perimetro_pentagono_regular(self, lado):
-        """
-        Calcula el perímetro de un pentágono regular.
-        
-        Args:
-            lado (float): Longitud del lado del pentágono
-            
-        Returns:
-            float: Perímetro del pentágono regular
-        """
-        pass
+        perimetroPentagono = 5 * lado
+
+        if perimetroPentagono == int(perimetroPentagono):
+            return int(perimetroPentagono)
+        return perimetroPentagono
+    
     
     def area_hexagono_regular(self, lado, apotema):
-        """
-        Calcula el área de un hexágono regular.
+        areaHexagono = (6 * lado * apotema) / 2
+
+        if areaHexagono == int(areaHexagono):
+            return int(areaHexagono)
+        return areaHexagono
         
-        Args:
-            lado (float): Longitud del lado del hexágono
-            apotema (float): Longitud de la apotema (distancia del centro al punto medio de un lado)
-            
-        Returns:
-            float: Área del hexágono regular
-        """
-        pass
     
     def perimetro_hexagono_regular(self, lado):
-        """
-        Calcula el perímetro de un hexágono regular.
+        perimetroHexagono = 6 * lado
+
+        if perimetroHexagono == int(perimetroHexagono):
+            return int(perimetroHexagono)   
+        return perimetroHexagono
         
-        Args:
-            lado (float): Longitud del lado del hexágono
-            
-        Returns:
-            float: Perímetro del hexágono regular
-        """
-        pass
     
     def volumen_cubo(self, lado):
-        """
-        Calcula el volumen de un cubo.
+        volumenCubo = lado ** 3
+
+        if volumenCubo == int(volumenCubo):
+            return int(volumenCubo)
+        return volumenCubo
         
-        Args:
-            lado (float): Longitud del lado del cubo
-            
-        Returns:
-            float: Volumen del cubo
-        """
-        pass
     
     def area_superficie_cubo(self, lado):
-        """
-        Calcula el área de la superficie de un cubo.
+        areaSuperficialCubo = 6 * (lado ** 2)
+
+        if areaSuperficialCubo == int(areaSuperficialCubo):
+            return int(areaSuperficialCubo)
+        return areaSuperficialCubo
         
-        Args:
-            lado (float): Longitud del lado del cubo
-            
-        Returns:
-            float: Área de la superficie del cubo
-        """
-        pass
     
     def volumen_esfera(self, radio):
-        """
-        Calcula el volumen de una esfera.
+        volumenEsfera = (4/3) * 3.141592 * (radio ** 3)
+
+        if volumenEsfera == int(volumenEsfera):
+            return int(volumenEsfera)
+        return round(volumenEsfera, 2)
         
-        Args:
-            radio (float): Radio de la esfera
-            
-        Returns:
-            float: Volumen de la esfera
-        """
-        pass
     
     def area_superficie_esfera(self, radio):
-        """
-        Calcula el área de la superficie de una esfera.
+        areaSuperficialEsfera = 4 * 3.141592 * (radio ** 2)
+
+        if areaSuperficialEsfera == int(areaSuperficialEsfera):
+            return int(areaSuperficialEsfera)
+        return round(areaSuperficialEsfera, 2)
         
-        Args:
-            radio (float): Radio de la esfera
-            
-        Returns:
-            float: Área de la superficie de la esfera
-        """
-        pass
     
     def volumen_cilindro(self, radio, altura):
-        """
-        Calcula el volumen de un cilindro.
+        volumenCilindro = 3.141592 * (radio ** 2) * altura
+
+        if volumenCilindro == int(volumenCilindro):
+            return int(volumenCilindro)
+        return round(volumenCilindro, 2)
         
-        Args:
-            radio (float): Radio de la base del cilindro
-            altura (float): Altura del cilindro
-            
-        Returns:
-            float: Volumen del cilindro
-        """
-        pass
     
     def area_superficie_cilindro(self, radio, altura):
-        """
-        Calcula el área de la superficie de un cilindro.
+        areaSuperficialCilindro = 2 * 3.141592 * radio * (radio + altura)
+
+        if areaSuperficialCilindro == int(areaSuperficialCilindro):
+            return int(areaSuperficialCilindro)
+        return round(areaSuperficialCilindro, 2)
         
-        Args:
-            radio (float): Radio de la base del cilindro
-            altura (float): Altura del cilindro
-            
-        Returns:
-            float: Área de la superficie del cilindro
-        """
-        pass
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
-        """
-        Calcula la distancia euclidiana entre dos puntos en un plano 2D.
+        distancia = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+        return round(distancia, 2)
         
-        Args:
-            x1 (float): Coordenada x del primer punto
-            y1 (float): Coordenada y del primer punto
-            x2 (float): Coordenada x del segundo punto
-            y2 (float): Coordenada y del segundo punto
-            
-        Returns:
-            float: Distancia entre los dos puntos
-        """
-        pass
     
     def punto_medio(self, x1, y1, x2, y2):
-        """
-        Calcula el punto medio entre dos puntos en un plano 2D.
-        
-        Args:
-            x1 (float): Coordenada x del primer punto
-            y1 (float): Coordenada y del primer punto
-            x2 (float): Coordenada x del segundo punto
-            y2 (float): Coordenada y del segundo punto
-            
-        Returns:
-            tuple: Coordenadas (x, y) del punto medio
-        """
-        pass
+        puntoMedioX = (x1 + x2) / 2
+        puntoMedioY = (y1 + y2) / 2
+        return (round(puntoMedioX, 2), round(puntoMedioY, 2))
+    
     
     def pendiente_recta(self, x1, y1, x2, y2):
-        """
-        Calcula la pendiente de una recta que pasa por dos puntos.
-        
-        Args:
-            x1 (float): Coordenada x del primer punto
-            y1 (float): Coordenada y del primer punto
-            x2 (float): Coordenada x del segundo punto
-            y2 (float): Coordenada y del segundo punto
-            
-        Returns:
-            float: Pendiente de la recta
-        """
-        pass
+        pendiente = (y2 - y1) / (x2 - x1)
+        return round(pendiente, 2)
+    
     
     def ecuacion_recta(self, x1, y1, x2, y2):
-        """
-        Obtiene los coeficientes de la ecuación de una recta en la forma Ax + By + C = 0.
-        
-        Args:
-            x1 (float): Coordenada x del primer punto
-            y1 (float): Coordenada y del primer punto
-            x2 (float): Coordenada x del segundo punto
-            y2 (float): Coordenada y del segundo punto
-            
-        Returns:
-            tuple: Coeficientes (A, B, C) de la ecuación de la recta
-        """
-        pass
+        a = y2 - y1
+        b = x1 - x2
+        c = (x2 * y1) - (x1 * y2)
+
+        tupla = (a, b, c)
+        return tupla
     
-    def area_poligono_regular(self, num_lados, lado, apotema):
-        """
-        Calcula el área de un polígono regular.
+    
+    def area_poligono_regular(self, num_lados: int, lado: float, apotema: float):
+        if num_lados == 4:
+            areaPoligono = num_lados * lado * apotema
+        else:
+            areaPoligono = (num_lados * lado * apotema) / 2
         
-        Args:
-            num_lados (int): Número de lados del polígono
-            lado (float): Longitud de cada lado
-            apotema (float): Longitud de la apotema
-            
-        Returns:
-            float: Área del polígono regular
-        """
-        pass
+        if areaPoligono == int(areaPoligono):
+            return int(areaPoligono)
+        return areaPoligono
+    
     
     def perimetro_poligono_regular(self, num_lados, lado):
-        """
-        Calcula el perímetro de un polígono regular.
-        
-        Args:
-            num_lados (int): Número de lados del polígono
-            lado (float): Longitud de cada lado
-            
-        Returns:
-            float: Perímetro del polígono regular
-        """
-        pass
+        perimetroPoligono = num_lados * lado
+        if perimetroPoligono == int(perimetroPoligono):
+            return int(perimetroPoligono)
+        return perimetroPoligono
